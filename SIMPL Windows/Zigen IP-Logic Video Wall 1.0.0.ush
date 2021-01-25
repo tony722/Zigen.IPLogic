@@ -1,0 +1,897 @@
+[BEGIN]
+  Version=1
+[END]
+[BEGIN]
+  ObjTp=FSgntr
+  Sgntr=UserSPlus
+  RelVrs=1
+  IntStrVrs=1
+  SPlusVrs=4.04.01
+  CrossCplrVrs=1.3
+[END]
+[BEGIN]
+  ObjTp=Hd
+  Cmn1=||2Stretch_To_Fill:\\    0 = Keep aspect ratio by adding black bars||1
+  Cmn2=to wall\\    1 = Stretch to cover entire wall with no black bars||1
+  Cmn3=added\\\\  Receiver_Name parameter:\\    Receivers are in order||1
+  Cmn4=left-to-right, top-to-bottom
+[END]
+[BEGIN]
+  ObjTp=Symbol
+  Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,718,756,767,830,841,842,854,883,955,1032,1062,1079,1128,1129,1134,1140,1157,1158,1195,1199,1220,1221,1222,1223,1299,1348,1349,1439,1472,1473,1499,1746,1803,1975,2229,2354,2514,2523,2532,2706,2707,3235,3236,3427,3454,3567,3568,3601,3602,3708,3902,3903,3912,3918,3925,3926,4206,4207,6089,6101,6114,6136,6343,6356,6357,6423,
+  Exclusions_CDS=5
+  Inclusions_CDS=6
+  Name=Zigen IP-Logic Video Wall 1.0.0
+  SmplCName=Zigen IP-Logic Video Wall 1.0.0.usp
+  Code=1
+  SysRev5=4.000
+  SMWRev=3.00.00
+  InputCue1=Stretch_To_Fill
+  InputSigType1=Digital
+  InputList2Cue1=Video_Source
+  InputList2SigType1=Analog
+  ParamCue1=[Reference Name]
+  ParamCue2=[~UNUSED~]
+  ParamSigType2=Constant
+  ParamCue3=[~UNUSED~]
+  ParamSigType3=Constant
+  ParamCue4=Width
+  ParamSigType4=Constant
+  ParamCue5=Height
+  ParamSigType5=Constant
+  ParamCue6=Switcher_Mode,fastswitch,genlock
+  ParamSigType6=List
+  ParamCue7=Receiver_Name[1]
+  ParamSigType7=String
+  ParamCue8=Receiver_Name[2]
+  ParamSigType8=String
+  ParamCue9=Receiver_Name[3]
+  ParamSigType9=String
+  ParamCue10=Receiver_Name[4]
+  ParamSigType10=String
+  ParamCue11=Receiver_Name[5]
+  ParamSigType11=String
+  ParamCue12=Receiver_Name[6]
+  ParamSigType12=String
+  ParamCue13=Receiver_Name[7]
+  ParamSigType13=String
+  ParamCue14=Receiver_Name[8]
+  ParamSigType14=String
+  ParamCue15=Receiver_Name[9]
+  ParamSigType15=String
+  ParamCue16=Receiver_Name[10]
+  ParamSigType16=String
+  ParamCue17=Receiver_Name[11]
+  ParamSigType17=String
+  ParamCue18=Receiver_Name[12]
+  ParamSigType18=String
+  ParamCue19=Receiver_Name[13]
+  ParamSigType19=String
+  ParamCue20=Receiver_Name[14]
+  ParamSigType20=String
+  ParamCue21=Receiver_Name[15]
+  ParamSigType21=String
+  ParamCue22=Receiver_Name[16]
+  ParamSigType22=String
+  ParamCue23=Receiver_Name[17]
+  ParamSigType23=String
+  ParamCue24=Receiver_Name[18]
+  ParamSigType24=String
+  ParamCue25=Receiver_Name[19]
+  ParamSigType25=String
+  ParamCue26=Receiver_Name[20]
+  ParamSigType26=String
+  ParamCue27=Receiver_Name[21]
+  ParamSigType27=String
+  ParamCue28=Receiver_Name[22]
+  ParamSigType28=String
+  ParamCue29=Receiver_Name[23]
+  ParamSigType29=String
+  ParamCue30=Receiver_Name[24]
+  ParamSigType30=String
+  ParamCue31=Receiver_Name[25]
+  ParamSigType31=String
+  ParamCue32=Receiver_Name[26]
+  ParamSigType32=String
+  ParamCue33=Receiver_Name[27]
+  ParamSigType33=String
+  ParamCue34=Receiver_Name[28]
+  ParamSigType34=String
+  ParamCue35=Receiver_Name[29]
+  ParamSigType35=String
+  ParamCue36=Receiver_Name[30]
+  ParamSigType36=String
+  ParamCue37=Receiver_Name[31]
+  ParamSigType37=String
+  ParamCue38=Receiver_Name[32]
+  ParamSigType38=String
+  ParamCue39=Receiver_Name[33]
+  ParamSigType39=String
+  ParamCue40=Receiver_Name[34]
+  ParamSigType40=String
+  ParamCue41=Receiver_Name[35]
+  ParamSigType41=String
+  ParamCue42=Receiver_Name[36]
+  ParamSigType42=String
+  ParamCue43=Receiver_Name[37]
+  ParamSigType43=String
+  ParamCue44=Receiver_Name[38]
+  ParamSigType44=String
+  ParamCue45=Receiver_Name[39]
+  ParamSigType45=String
+  ParamCue46=Receiver_Name[40]
+  ParamSigType46=String
+  ParamCue47=Receiver_Name[41]
+  ParamSigType47=String
+  ParamCue48=Receiver_Name[42]
+  ParamSigType48=String
+  ParamCue49=Receiver_Name[43]
+  ParamSigType49=String
+  ParamCue50=Receiver_Name[44]
+  ParamSigType50=String
+  ParamCue51=Receiver_Name[45]
+  ParamSigType51=String
+  ParamCue52=Receiver_Name[46]
+  ParamSigType52=String
+  ParamCue53=Receiver_Name[47]
+  ParamSigType53=String
+  ParamCue54=Receiver_Name[48]
+  ParamSigType54=String
+  ParamCue55=Receiver_Name[49]
+  ParamSigType55=String
+  ParamCue56=Receiver_Name[50]
+  ParamSigType56=String
+  ParamCue57=Receiver_Name[51]
+  ParamSigType57=String
+  ParamCue58=Receiver_Name[52]
+  ParamSigType58=String
+  ParamCue59=Receiver_Name[53]
+  ParamSigType59=String
+  ParamCue60=Receiver_Name[54]
+  ParamSigType60=String
+  ParamCue61=Receiver_Name[55]
+  ParamSigType61=String
+  ParamCue62=Receiver_Name[56]
+  ParamSigType62=String
+  ParamCue63=Receiver_Name[57]
+  ParamSigType63=String
+  ParamCue64=Receiver_Name[58]
+  ParamSigType64=String
+  ParamCue65=Receiver_Name[59]
+  ParamSigType65=String
+  ParamCue66=Receiver_Name[60]
+  ParamSigType66=String
+  ParamCue67=Receiver_Name[61]
+  ParamSigType67=String
+  ParamCue68=Receiver_Name[62]
+  ParamSigType68=String
+  ParamCue69=Receiver_Name[63]
+  ParamSigType69=String
+  ParamCue70=Receiver_Name[64]
+  ParamSigType70=String
+  MinVariableInputs=1
+  MaxVariableInputs=1
+  MinVariableInputsList2=1
+  MaxVariableInputsList2=1
+  MinVariableOutputs=0
+  MaxVariableOutputs=0
+  MinVariableOutputsList2=0
+  MaxVariableOutputsList2=0
+  MinVariableParams=6
+  MaxVariableParams=69
+  Expand=expand_separately
+  Expand2=expand_separately
+  ProgramTree=Logic
+  SymbolTree=32
+  Hint=
+  PdfHelp=Zigen IP-Logic Help.pdf
+  HelpID= 
+  Render=4
+  Smpl-C=16
+  CompilerCode=-48
+  CompilerParamCode=27
+  CompilerParamCode5=14
+  NumFixedParams=1
+  Pp1=1
+  Pp4=4
+  Pp5=5
+  Pp6=6
+  Pp7=7
+  Pp8=8
+  Pp9=9
+  Pp10=10
+  Pp11=11
+  Pp12=12
+  Pp13=13
+  Pp14=14
+  Pp15=15
+  Pp16=16
+  Pp17=17
+  Pp18=18
+  Pp19=19
+  Pp20=20
+  Pp21=21
+  Pp22=22
+  Pp23=23
+  Pp24=24
+  Pp25=25
+  Pp26=26
+  Pp27=27
+  Pp28=28
+  Pp29=29
+  Pp30=30
+  Pp31=31
+  Pp32=32
+  Pp33=33
+  Pp34=34
+  Pp35=35
+  Pp36=36
+  Pp37=37
+  Pp38=38
+  Pp39=39
+  Pp40=40
+  Pp41=41
+  Pp42=42
+  Pp43=43
+  Pp44=44
+  Pp45=45
+  Pp46=46
+  Pp47=47
+  Pp48=48
+  Pp49=49
+  Pp50=50
+  Pp51=51
+  Pp52=52
+  Pp53=53
+  Pp54=54
+  Pp55=55
+  Pp56=56
+  Pp57=57
+  Pp58=58
+  Pp59=59
+  Pp60=60
+  Pp61=61
+  Pp62=62
+  Pp63=63
+  Pp64=64
+  Pp65=65
+  Pp66=66
+  Pp67=67
+  Pp68=68
+  Pp69=69
+  Pp70=70
+  MPp=70
+  NVStorage=10
+  ParamSigType1=String
+  SmplCInputCue1=o#
+  SmplCOutputCue1=i#
+  SmplCInputList2Cue1=an#
+  SmplCOutputList2Cue1=ai#
+  SPlus2CompiledName=S2_Zigen_IP_Logic_Video_Wall_1_0_0
+  SymJam=NonExclusive
+  FileName=Zigen IP-Logic Video Wall 1.0.0.ush
+  SIMPLPlusModuleEncoding=0
+  Usl1=Zigen IP-Logic.usl
+  clz1=AET.Zigen.IPLogic
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=1
+  Tp=1
+  NoS=False
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=4
+  Tp=1
+  SD=Number of displays horizontally (columns).
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=5
+  Tp=1
+  SD=Number of displays vertically (rows).
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=6
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=2
+  VN=2
+  Val1=fastswitch
+  Lbl1=Fast Switch
+  Val2=genlock
+  Lbl2=Genlock
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=7
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=8
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=9
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=10
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=11
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=12
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=13
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=14
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=15
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=16
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=17
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=18
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=19
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=20
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=21
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=22
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=23
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=24
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=25
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=26
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=27
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=28
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=29
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=30
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=31
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=32
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=33
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=34
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=35
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=36
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=37
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=38
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=39
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=40
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=41
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=42
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=43
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=44
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=45
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=46
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=47
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=48
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=49
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=50
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=51
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=52
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=53
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=54
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=55
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=56
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=57
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=58
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=59
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=60
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=61
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=62
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=63
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=64
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=65
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=66
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=67
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=68
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=69
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=70
+  Tp=1
+  SD=Name of each receiver: The progression is left to right, top to bottom.
+  HD=False
+  NoS=False
+  VVS=0
+[END]

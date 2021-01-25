@@ -1,0 +1,116 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+/*
+#HELP_BEGIN
+   Each parameter associates a Video Output number with the MAC Address of a IP-Logic Receiver
+#HELP_END
+*/
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+  
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+DIGITAL_INPUT Poll_RX, _skip_;
+STRING_INPUT  tx$[255];
+
+STRING_OUTPUT rx$;
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+INTEGER_PARAMETER _Skip_,_Skip_,_Skip_,_Skip_;
+
+
+STRING_PARAMETER Device_Name[255];
+
+INTEGER_PARAMETER Poll;
+#BEGIN_PARAMETER_PROPERTIES Poll
+  propDefaultValue = 0d; 
+  propList = {0d, "Manual/None"},{1d, "Automatic"};
+#END_PARAMETER_PROPERTIES
+
+
+LONG_INTEGER_PARAMETER _Skip_, BaudRate;
+INTEGER_PARAMETER DataBits, StopBits;
+#BEGIN_PARAMETER_PROPERTIES BaudRate
+  propDefaultValue = 9600d; propList = {2400d, "2400"},{4800d, "4800"},{9600d, "9600"}, {38400d, "38,400"}, {57600d, "57,600"}, {19200d, "19,200"}, {115200d, "115,200"};
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES DataBits
+  propDefaultValue = 8d; propList = {6d, "6"},{7d, "7"},{8d, "8"};
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES StopBits
+  propDefaultValue = 1d; propList = {1d, "1"},{2d, "2"};
+#END_PARAMETER_PROPERTIES
+
+STRING_PARAMETER Parity[1];
+#BEGIN_PARAMETER_PROPERTIES Parity
+  propDefaultValue = "NONE"; propList = {"NONE", "N"},{"ODD", "O"},{"EVEN", "E"};
+#END_PARAMETER_PROPERTIES
+
+
+
+/*******************************************************************************************
+  Global Variables
+*******************************************************************************************/
+integer initialized;
+CommsRx com;
+LoadCompleteRunner loadComplete;
+
+/*******************************************************************************************
+  Event Handlers
+*******************************************************************************************/
+callback function RxCode(string value) {
+  RX$ = value;
+}
+
+callback function SetComSpec() {
+  SaveRS232Configuration rs232;
+  com.MacAddress = Config.DeviceAddressFromName(Device_Name);  
+  if(Poll) com.RegisterForAutomaticPolling();  
+  rs232.MacAddress = Config.DeviceAddressFromName(Device_Name);
+  rs232.BaudRate = BaudRate;
+  rs232.DataBits = DataBits;
+  rs232.StopBits = StopBits;
+  rs232.Parity = Parity;
+  rs232.Execute();
+  initialized = 1;
+}
+
+PUSH Poll_RX {
+  com.Poll();
+}
+
+CHANGE tx$ {
+  SendCommsData cmd;
+  cmd.MacAddress = Config.DeviceAddressFromName(Device_Name);
+  cmd.Type = "rs232";
+  cmd.Code = tx$;  
+  cmd.Execute();
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+function Main() {
+  initialized = 0;
+  WaitForInitializationComplete();
+  RegisterDelegate(com, RxCode, RxCode);
+  RegisterDelegate(loadComplete, LoadComplete, SetComSpec);
+}

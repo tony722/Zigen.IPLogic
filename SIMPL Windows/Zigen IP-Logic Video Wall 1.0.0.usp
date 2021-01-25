@@ -1,0 +1,94 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#HELP_PDF_FILE "Zigen IP-Logic Help.pdf"
+#HELP_BEGIN
+  Stretch_To_Fill:
+    0 = Keep aspect ratio by adding black bars to wall
+    1 = Stretch to cover entire wall with no black bars added
+
+  Receiver_Name parameter:
+    Receivers are in order left-to-right, top-to-bottom
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+DIGITAL_INPUT Stretch_To_Fill;
+ANALOG_INPUT Video_Source;
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+INTEGER_PARAMETER _skip_, _skip_, Width, Height;
+STRING_PARAMETER Switcher_Mode[10];
+STRING_PARAMETER Receiver_Name[MAX_RECEIVERS][255];
+
+/*******************************************************************************************
+  Parameter Properties
+*******************************************************************************************/
+#BEGIN_PARAMETER_PROPERTIES Width
+   propValidUnits = unitDecimal;
+   propShortDescription = "Number of displays horizontally (columns).";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Height
+   propValidUnits = unitDecimal;
+   propShortDescription = "Number of displays vertically (rows).";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Switcher_Mode
+   propList={ "fastswitch","Fast Switch" },{ "genlock","Genlock" };
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Receiver_Name
+   propShortDescription = "Name of each receiver: The progression is left to right, top to bottom.";
+#END_PARAMETER_PROPERTIES
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+ApplyVideoWall vw;
+LoadCompleteRunner loadComplete;
+
+callback function SetVideoWallParams() { 
+  integer a;
+  vw.Width = Width;
+  vw.Height = Height;
+  vw.SwitcherMode = Switcher_Mode;
+  for(a = 1 to MAX_RECEIVERS) {
+    if(!IsParameterDefined(Receiver_Name[a])) return;
+    vw.AddReceiver(Config.DeviceAddressFromName(Receiver_Name[a]));
+  }
+}
+
+CHANGE Video_Source {
+  vw.TransmitterMacAddress = Config.TransmitterAddressFromIndex(Video_Source);
+  if(Stretch_To_Fill) vw.AspectRatio = "stretch"; else vw.AspectRatio = "keep";
+  vw.Execute(); 
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+function Main() { 
+  WaitForInitializationComplete();
+  RegisterDelegate(loadComplete, LoadComplete, SetVideoWallParams);
+}

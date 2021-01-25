@@ -1,0 +1,58 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#HELP_PDF_FILE "Zigen IP-Logic Help.pdf"
+
+#HELP_BEGIN
+   Each parameter associates a Video Output analog number with the Name of a IP-Logic Receiver.
+   Used in conjunction with Zigen IP-Logic Video/Audio Routing modules.
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+STRING_PARAMETER Receiver_Name_Output[MAX_RECEIVERS][255];
+
+/*******************************************************************************************
+  Parameter Properties
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+LoadCompleteRunner loadComplete;
+
+callback function SetReceiverIndexes() {
+  integer i;
+  for(i = 1 to MAX_RECEIVERS) {
+    if(!IsParameterDefined(Receiver_Name_Output[i])) break;
+    Config.SetDeviceIndex(Receiver_Name_Output[i], i);
+  }
+  Config.Devices.RebuildDicts();
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+function Main() {
+  WaitForInitializationComplete();
+  RegisterDelegate(loadComplete, LoadComplete, SetReceiverIndexes);
+  
+}

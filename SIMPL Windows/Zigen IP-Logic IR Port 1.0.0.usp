@@ -1,0 +1,69 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#DIGITAL_EXPAND InputsWithParams
+
+#HELP_PDF_FILE "Zigen IP-Logic Help.pdf"
+/*
+#HELP_BEGIN
+   
+#HELP_END
+*/
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+  
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+DIGITAL_INPUT _Skip_, _Skip_, Send_IR[MAX_IR_CODES];
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+STRING_PARAMETER Device_Name[255], _Skip_;
+
+STRING_PARAMETER CCF_HEX[MAX_IR_CODES][1024];
+#BEGIN_PARAMETER_PROPERTIES CCF_HEX
+   propShortDescription = "CCF IR HEX code (Works with spaces and w/o spaces)";
+#END_PARAMETER_PROPERTIES
+
+
+/*******************************************************************************************
+  Global Variables
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+
+PUSH Send_IR {
+  SendCommsData cmd; 
+  cmd.MacAddress = Config.DeviceAddressFromName(Device_Name);
+  cmd.Type = "infrared";
+  cmd.Code = Utils.ParseValue(CCF_HEX[GetLastModifiedArrayIndex()]);
+  cmd.Execute();
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+/*
+function Main() {
+  WaitForInitializationComplete();
+}
+*/

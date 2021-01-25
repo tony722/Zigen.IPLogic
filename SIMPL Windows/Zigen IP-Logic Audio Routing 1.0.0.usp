@@ -1,0 +1,84 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#HELP_PDF_FILE "Zigen IP-Logic Help.pdf"
+#HELP_BEGIN
+   Switch Inputs (transmitters) to Outputs (receivers).
+   Map transmitters and receivers to analog numbers with the Zigen IP-Logic Transmitters / Recievers modules
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+DIGITAL_INPUT Enable_Audio_Breakaway;
+ANALOG_INPUT Audio_Out[MAX_RECEIVERS];
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Parameter Properties
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Global Variables
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+function LeaveAudio(byval integer index) {
+  LeaveHDMIAudioStream o;
+  o.MacAddress = Config.ReceiverAddressFromIndex(index);
+  o.Execute();
+}
+
+function RouteAudio(byval integer index) {
+  RouteAudioStream o;
+  o.TransmitterMacAddress = Config.TransmitterAddressFromIndex(Audio_Out[index]);
+  o.ReceiverMacAddress = Config.ReceiverAddressFromIndex(index);
+  o.Execute();
+}
+
+function Route(byval integer index) {
+  if(Audio_Out[index] = 0) LeaveAudio(index);
+  else RouteAudio(index);
+}
+
+/*******************************************************************************************
+  Event Handlers
+*******************************************************************************************/
+CHANGE Enable_Audio_Breakaway {
+  Config.EnableAudioBreakaway_u = Enable_Audio_Breakaway;
+}
+
+CHANGE Audio_Out {
+  if(Enable_Audio_Breakaway) Route(GetLastModifiedArrayIndex());    
+}
+
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+Function Main() {
+  
+}
+

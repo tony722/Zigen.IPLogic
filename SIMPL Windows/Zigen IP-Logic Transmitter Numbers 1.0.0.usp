@@ -1,0 +1,56 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#HELP_BEGIN
+   Each parameter associates a Video Output analog number with the Name of a IP-Logic Transmitter.
+   Used in conjunction with Zigen IP-Logic Video/Audio Routing modules.
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+STRING_PARAMETER Transmitter_Name_Input[MAX_TRANSMITTERS][255];
+
+/*******************************************************************************************
+  Parameter Properties
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+LoadCompleteRunner loadComplete;
+
+callback function SetTransmitterIndexes() { 
+  integer i;
+  for(i = 1 to MAX_TRANSMITTERS) {
+    if(!IsParameterDefined(Transmitter_Name_Input[i])) break;
+    Config.SetDeviceIndex(Transmitter_Name_Input[i], i);
+  }
+  Config.Devices.RebuildDicts();
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+function Main() {
+  WaitForInitializationComplete();
+  RegisterDelegate(loadComplete, LoadComplete, SetTransmitterIndexes);
+}
+

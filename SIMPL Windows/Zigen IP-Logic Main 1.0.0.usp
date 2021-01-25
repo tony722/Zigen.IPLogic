@@ -1,0 +1,82 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+// #ENABLE_TRACE
+#HELP_PDF_FILE "Zigen IP-Logic Help.pdf"
+/*
+#HELP_BEGIN
+   (add additional lines of help lines)
+#HELP_END
+*/
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+DIGITAL_INPUT _Skip_, _Skip_, Start, Stop;
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+STRING_PARAMETER Host_Name[255];
+INTEGER_PARAMETER Poll_Interval;
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+#BEGIN_PARAMETER_PROPERTIES Host_Name
+   propDefaultValue = "http://192.168.1.10/";
+   propShortDescription = "Address of IP-Logic Essentials unit: http://hostname[:port]/";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Poll_Interval
+   propDefaultValue = 2.00s;
+   propShortDescription = "Interval to poll RS-232 devices (hundredths-seconds)";
+#END_PARAMETER_PROPERTIES
+
+
+/*******************************************************************************************
+  Global Variables
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Event Handlers
+*******************************************************************************************/
+PUSH Start {
+  Config.Start();
+}
+
+PUSH Stop {
+  CommsPoller.StopPolling();
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+Function Main() {
+  integer pollInterval;
+  pollInterval = Poll_Interval * 10;
+  APIClient.HostName = Host_Name;
+  Config.PollInterval = pollInterval;
+}
+

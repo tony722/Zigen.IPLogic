@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F76CB47-4448-4CA1-9E4A-E64EBDB6E37D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AET.Zigen.IPLogic</RootNamespace>
+    <AssemblyName>AET.Zigen.IPLogic</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Compact">
+      <HintPath>C:\ProgramData\Crestron\SDK\Newtonsoft.Json.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="SimplSharpCustomAttributesInterface">
+      <HintPath>C:\ProgramData\Crestron\SDK\SimplSharpCustomAttributesInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="SimplSharpHelperInterface">
+      <HintPath>C:\ProgramData\Crestron\SDK\SimplSharpHelperInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIClient.cs" />
+    <Compile Include="LoadCompleteRunner.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="CommandObjects\APICommandObject.cs" />
+    <Compile Include="CommandObjects\ApplyMultiviewToReceiver.cs" />
+    <Compile Include="CommandObjects\ApplyVideoWall.cs" />
+    <Compile Include="CommandObjects\GetCommsData.cs" />
+    <Compile Include="CommandObjects\GetDeviceList.cs" />
+    <Compile Include="CommandObjects\LeaveMultiviewStreams.cs" />
+    <Compile Include="CommsRx.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Devices.cs" />
+    <Compile Include="Mutex.cs" />
+    <Compile Include="ResponseObjects\APIResponseObject.cs" />
+    <Compile Include="ResponseObjects\GetCommsDataResponse.cs" />
+    <Compile Include="CommandObjects\LeaveHDMIVideoAndAudioStream.cs" />
+    <Compile Include="CommandObjects\LeaveHDMIAudioStream.cs" />
+    <Compile Include="CommandObjects\LeaveHDMIVideoStream.cs" />
+    <Compile Include="CommandObjects\RouteAudioStream.cs" />
+    <Compile Include="CommandObjects\RouteHDMI.cs" />
+    <Compile Include="CommandObjects\SaveRS232Configuration.cs" />
+    <Compile Include="CommandObjects\SendCommsData.cs" />
+    <Compile Include="CommandObjects\VideoOptions.cs" />
+    <Compile Include="CommsPoller.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HttpClient\CrestronHttpClient.cs" />
+    <Compile Include="HttpClient\IHttpClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseObjects\GetDeviceListResponse.cs" />
+    <Compile Include="Timer.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

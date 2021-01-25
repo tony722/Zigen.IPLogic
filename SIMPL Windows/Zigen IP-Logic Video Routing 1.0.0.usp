@@ -1,0 +1,92 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+*******************************************************************************************/
+/*
+Dealer Name: Zigen Corp
+Programmer: Tony Evert / AVDMedia.com
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+*******************************************************************************************/
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#HELP_BEGIN
+   Switch Inputs (transmitters) to Outputs (receivers).
+   Map transmitters and receivers to analog numbers with the Zigen IP-Logic Transmitters / Recievers modules
+#HELP_END
+
+/*******************************************************************************************
+  Include Libraries
+*******************************************************************************************/
+#USER_LIBRARY "Zigen IP-Logic"
+#USER_SIMPLSHARP_LIBRARY "AET.Zigen.IPLogic"
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+*******************************************************************************************/
+ANALOG_INPUT Video_Out[MAX_RECEIVERS];
+
+/*******************************************************************************************
+  Parameters
+*******************************************************************************************/
+
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Global Variables
+*******************************************************************************************/
+
+/*******************************************************************************************
+  Functions
+*******************************************************************************************/
+function LeaveVideoAndAudio(byval integer index) {
+  LeaveHDMIVideoAndAudioStream o;
+  o.MacAddress = Config.ReceiverAddressFromIndex(index);
+  o.Execute();
+}
+
+function LeaveVideo(byval integer index) {
+  LeaveHDMIVideoStream o;
+  o.MacAddress = Config.ReceiverAddressFromIndex(index);
+  o.Execute();
+}
+
+function RouteVideo(byval integer index) {
+  RouteHDMI o;
+  o.ReceiverMacAddress = Config.ReceiverAddressFromIndex(index);
+  o.TransmitterMacAddress = Config.TransmitterAddressFromIndex(Video_Out[index]);
+  o.Execute();
+}
+
+function Route(byval integer index) {
+  if(Video_Out[index] = 0) {
+    if(Config.EnableAudioBreakaway_u) {
+      LeaveVideo(index);
+    } else {
+      LeaveVideoAndAudio(index);
+    }
+  } else {
+    RouteVideo(index);
+  }
+}
+
+/*******************************************************************************************
+  Event Handlers
+*******************************************************************************************/
+CHANGE Video_Out {
+  Route(GetLastModifiedArrayIndex());  
+}
+
+/*******************************************************************************************
+  Main()
+*******************************************************************************************/
+//Function Main() { 
+//  WaitForInitializationComplete();
+//}
+

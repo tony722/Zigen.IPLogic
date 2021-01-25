@@ -1,0 +1,140 @@
+[
+ObjTp=FSgntr
+Sgntr=FlashComposite
+;Increment this version when CED file format changes
+RelVrs=3
+IntStrVrs=1
+VTProeVer=6.2.00
+]
+[
+ObjTp=Symbol
+Name=Zigen IPLogic_2.3 3x3_Video Switch 9.ced
+Hint=Video Switch 9 (Smart Object ID=9)
+Code=5
+SGControlType=Video Switcher
+SGControlName=Video Switch 9
+GUID=2FEE008C-4418-4667-94DC-C5087A75EE5B
+SmplCName=Zigen IPLogic_2.3 3x3_Video Switch 9.ced
+SMWRev=4.02.19
+Expand=expand_random
+HelpID=10016
+;Define the number of inputs, outputs and parameters
+MinVariableInputs=9
+MaxVariableInputs=9
+MinVariableOutputs=9
+MaxVariableOutputs=9
+NumFixedParams=1
+MinVariableInputsList2=10
+MaxVariableInputsList2=10
+MinVariableOutputsList2=10
+MaxVariableOutputsList2=10
+MinVariableInputsList3=0
+MaxVariableInputsList3=0
+MinVariableOutputsList3=0
+MaxVariableOutputsList3=0
+;Define the cues, and signal types  each input, output and parameter.
+InputCue1=[~UNUSED3~]
+InputSigType1=Digital
+OutputCue1=Screen 1 Source Changed
+OutputSigType1=Digital
+InputCue2=[~UNUSED3~]
+InputSigType2=Digital
+OutputCue2=Screen 2 Source Changed
+OutputSigType2=Digital
+InputCue3=[~UNUSED3~]
+InputSigType3=Digital
+OutputCue3=Screen 3 Source Changed
+OutputSigType3=Digital
+InputCue4=[~UNUSED3~]
+InputSigType4=Digital
+OutputCue4=Screen 4 Source Changed
+OutputSigType4=Digital
+InputCue5=[~UNUSED3~]
+InputSigType5=Digital
+OutputCue5=Screen 5 Source Changed
+OutputSigType5=Digital
+InputCue6=[~UNUSED3~]
+InputSigType6=Digital
+OutputCue6=Screen 6 Source Changed
+OutputSigType6=Digital
+InputCue7=[~UNUSED3~]
+InputSigType7=Digital
+OutputCue7=Screen 7 Source Changed
+OutputSigType7=Digital
+InputCue8=[~UNUSED3~]
+InputSigType8=Digital
+OutputCue8=Screen 8 Source Changed
+OutputSigType8=Digital
+InputCue9=[~UNUSED3~]
+InputSigType9=Digital
+OutputCue9=Screen 9 Source Changed
+OutputSigType9=Digital
+InputList2Cue1=Number of visible screens
+InputList2SigType1=Analog
+OutputList2Cue1=[~UNUSED3~]
+OutputList2SigType1=Analog
+InputList2Cue2=Screen 1 Source Selection
+InputList2SigType2=Analog
+OutputList2Cue2=Screen 1 Source Selection
+OutputList2SigType2=Analog
+InputList2Cue3=Screen 2 Source Selection
+InputList2SigType3=Analog
+OutputList2Cue3=Screen 2 Source Selection
+OutputList2SigType3=Analog
+InputList2Cue4=Screen 3 Source Selection
+InputList2SigType4=Analog
+OutputList2Cue4=Screen 3 Source Selection
+OutputList2SigType4=Analog
+InputList2Cue5=Screen 4 Source Selection
+InputList2SigType5=Analog
+OutputList2Cue5=Screen 4 Source Selection
+OutputList2SigType5=Analog
+InputList2Cue6=Screen 5 Source Selection
+InputList2SigType6=Analog
+OutputList2Cue6=Screen 5 Source Selection
+OutputList2SigType6=Analog
+InputList2Cue7=Screen 6 Source Selection
+InputList2SigType7=Analog
+OutputList2Cue7=Screen 6 Source Selection
+OutputList2SigType7=Analog
+InputList2Cue8=Screen 7 Source Selection
+InputList2SigType8=Analog
+OutputList2Cue8=Screen 7 Source Selection
+OutputList2SigType8=Analog
+InputList2Cue9=Screen 8 Source Selection
+InputList2SigType9=Analog
+OutputList2Cue9=Screen 8 Source Selection
+OutputList2SigType9=Analog
+InputList2Cue10=Screen 9 Source Selection
+InputList2SigType10=Analog
+OutputList2Cue10=Screen 9 Source Selection
+OutputList2SigType10=Analog
+ParamCue1=SmartObjectId
+ParamSigType1=Constant
+MPp=1
+Pp1=5
+CedH=5
+SmartObjId=9d
+]
+; Parameter Properties for Smart Object ID
+[
+ObjTp=Dp
+H=5
+Tp=1
+HD=TRUE
+DV=9d
+NF=1
+DNF=1
+EncFmt=0
+DVLF=1
+Sgn=0
+]
+; Smart Objects Definition section
+[
+ObjTp=CED
+H=5
+Name=Zigen IPLogic_2.3 3x3_Video Switch 9.ced
+;Cedver is the version of the Smart Graphics control, not the CED file format.
+;If the control definition changes, increment this.
+CedVer=1
+]

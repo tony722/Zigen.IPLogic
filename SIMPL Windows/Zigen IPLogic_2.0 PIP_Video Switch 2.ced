@@ -1,0 +1,84 @@
+[
+ObjTp=FSgntr
+Sgntr=FlashComposite
+;Increment this version when CED file format changes
+RelVrs=3
+IntStrVrs=1
+VTProeVer=6.2.00
+]
+[
+ObjTp=Symbol
+Name=Zigen IPLogic_2.0 PIP_Video Switch 2.ced
+Hint=Video Switch 2 (Smart Object ID=2)
+Code=3
+SGControlType=Video Switcher
+SGControlName=Video Switch 2
+GUID=3AC55153-D43F-4ACF-8D51-89FC7FBA016D
+SmplCName=Zigen IPLogic_2.0 PIP_Video Switch 2.ced
+SMWRev=4.02.19
+Expand=expand_random
+HelpID=10016
+;Define the number of inputs, outputs and parameters
+MinVariableInputs=2
+MaxVariableInputs=2
+MinVariableOutputs=2
+MaxVariableOutputs=2
+NumFixedParams=1
+MinVariableInputsList2=3
+MaxVariableInputsList2=3
+MinVariableOutputsList2=3
+MaxVariableOutputsList2=3
+MinVariableInputsList3=0
+MaxVariableInputsList3=0
+MinVariableOutputsList3=0
+MaxVariableOutputsList3=0
+;Define the cues, and signal types  each input, output and parameter.
+InputCue1=[~UNUSED3~]
+InputSigType1=Digital
+OutputCue1=Screen 1 Source Changed
+OutputSigType1=Digital
+InputCue2=[~UNUSED3~]
+InputSigType2=Digital
+OutputCue2=Screen 2 Source Changed
+OutputSigType2=Digital
+InputList2Cue1=Number of visible screens
+InputList2SigType1=Analog
+OutputList2Cue1=[~UNUSED3~]
+OutputList2SigType1=Analog
+InputList2Cue2=Screen 1 Source Selection
+InputList2SigType2=Analog
+OutputList2Cue2=Screen 1 Source Selection
+OutputList2SigType2=Analog
+InputList2Cue3=Screen 2 Source Selection
+InputList2SigType3=Analog
+OutputList2Cue3=Screen 2 Source Selection
+OutputList2SigType3=Analog
+ParamCue1=SmartObjectId
+ParamSigType1=Constant
+MPp=1
+Pp1=3
+CedH=3
+SmartObjId=2d
+]
+; Parameter Properties for Smart Object ID
+[
+ObjTp=Dp
+H=3
+Tp=1
+HD=TRUE
+DV=2d
+NF=1
+DNF=1
+EncFmt=0
+DVLF=1
+Sgn=0
+]
+; Smart Objects Definition section
+[
+ObjTp=CED
+H=3
+Name=Zigen IPLogic_2.0 PIP_Video Switch 2.ced
+;Cedver is the version of the Smart Graphics control, not the CED file format.
+;If the control definition changes, increment this.
+CedVer=1
+]

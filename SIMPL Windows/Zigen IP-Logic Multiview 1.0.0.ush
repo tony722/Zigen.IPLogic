@@ -1,0 +1,111 @@
+[BEGIN]
+  Version=1
+[END]
+[BEGIN]
+  ObjTp=FSgntr
+  Sgntr=UserSPlus
+  RelVrs=1
+  IntStrVrs=1
+  SPlusVrs=4.04.01
+  CrossCplrVrs=1.3
+[END]
+[BEGIN]
+  ObjTp=Hd
+  Cmn1=Force: A transmitter can only transmit a single scaled stream. \\
+  Cmn2=||41 Fails silently if a transmitter is currently streaming scaled||1
+  Cmn3=to another multiview at a different resolution. \\    0 Forcibly||1
+  Cmn4=disconnects a transmitter from the other multiview layout(s) if||1
+  Cmn5=there is a resolution mismatch\\\\Layout Number:   \\	0 - Picture||1
+  Cmn6=in Picture\\	1 - Picture and Picture\\	2 - 2x2\\	3 - 3x3\\	4 - 4x4\\
+  Cmn7=	5 - 2x2 and middle\\	6 - 4x4 and middle\\	7 - 1big, 3 small left\\
+  Cmn8=	8 - 1big, 3 small right\\	9 - 1big, 5 small bottom left\\	10 -||1
+  Cmn9=1big, 5 small bottom right\\	11 - 1big, 5 small top left\\	12 -||1
+  Cmn10=1big, 5 small top right\\	13 - 1big, 7 small bottom left\\	14 -||1
+  Cmn11=1big, 7 small bottom right\\	15 - 1big, 7 small top left\\	16 -||1
+  Cmn12=1big, 7 small top right\\	17 - 32 small\\	18 - 2 big, 8 small I-
+  Cmn13=Shaped\\\\Layout_Position:  \\  If the layout features a big surface,||1
+  Cmn14=the first ID is normally the big surface (except for Picture in||1
+  Cmn15=Picture, the smaller surface is first). \\  If the layout features||1
+  Cmn16=middle surrounded by smaller surfaces, the first is the middle surface.
+  Cmn17=||1\\  Otherwise, positions are left to right, top to bottom.
+[END]
+[BEGIN]
+  ObjTp=Symbol
+  Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,718,756,767,830,841,842,854,883,955,1032,1062,1079,1128,1129,1134,1140,1157,1158,1195,1199,1220,1221,1222,1223,1299,1348,1349,1439,1472,1473,1499,1746,1803,1975,2229,2354,2514,2523,2532,2706,2707,3235,3236,3427,3454,3567,3568,3601,3602,3708,3902,3903,3912,3918,3925,3926,4206,4207,6089,6101,6114,6136,6343,6356,6357,6423,
+  Exclusions_CDS=5
+  Inclusions_CDS=6
+  Name=Zigen IP-Logic Multiview 1.0.0
+  SmplCName=Zigen IP-Logic Multiview 1.0.0.usp
+  Code=1
+  SysRev5=4.000
+  SMWRev=3.00.00
+  InputCue1=[~UNUSED~]
+  InputSigType1=Digital
+  InputCue2=Go
+  InputSigType2=Digital
+  InputCue3=Clear
+  InputSigType3=Digital
+  InputCue4=[~UNUSED~]
+  InputSigType4=Digital
+  InputCue5=Force
+  InputSigType5=Digital
+  InputList2Cue1=Layout_Number
+  InputList2SigType1=Analog
+  InputList2Cue2=Layout_Position[#]
+  InputList2SigType2=Analog
+  ParamCue1=[Reference Name]
+  ParamCue2=Receiver_Name
+  ParamSigType2=String
+  MinVariableInputs=5
+  MaxVariableInputs=5
+  MinVariableInputsList2=2
+  MaxVariableInputsList2=65
+  MinVariableOutputs=0
+  MaxVariableOutputs=0
+  MinVariableOutputsList2=0
+  MaxVariableOutputsList2=0
+  MinVariableParams=1
+  MaxVariableParams=1
+  Expand=expand_separately
+  Expand2=expand_separately
+  ProgramTree=Logic
+  SymbolTree=32
+  Hint=
+  PdfHelp=Zigen IP-Logic Help.pdf
+  HelpID= 
+  Render=4
+  Smpl-C=16
+  CompilerCode=-48
+  CompilerParamCode=27
+  CompilerParamCode5=14
+  NumFixedParams=1
+  Pp1=1
+  Pp2=2
+  MPp=2
+  NVStorage=10
+  ParamSigType1=String
+  SmplCInputCue1=o#
+  SmplCOutputCue1=i#
+  SmplCInputList2Cue1=an#
+  SmplCOutputList2Cue1=ai#
+  SPlus2CompiledName=S2_Zigen_IP_Logic_Multiview_1_0_0
+  SymJam=NonExclusive
+  FileName=Zigen IP-Logic Multiview 1.0.0.ush
+  SIMPLPlusModuleEncoding=0
+  Usl1=Zigen IP-Logic.usl
+  clz1=AET.Zigen.IPLogic
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=1
+  Tp=1
+  NoS=False
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=2
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
